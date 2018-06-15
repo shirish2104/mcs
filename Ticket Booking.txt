@@ -1,0 +1,61 @@
+import java.util.Scanner;
+import java.util.Scanner;
+public class TicketBookinig {
+	public static void main(String[] x)
+	{
+		Scanner obj=new Scanner(System.in);
+		{
+			char[] seats={'E','E','E','E','E'};
+			int n=1;
+			while(n!=4)
+			{
+				System.out.println("Enter 1 For Booking Ticket");
+				System.out.println("Enter 2 For Cancel A Ticket");
+				System.out.println("Enter 3 For View Seat Layout");
+				System.out.println("Enter 4 To Exit");
+				int opt=obj.nextInt();
+				switch(opt)
+				{
+				  case 1:System.out.println("The Tickets Avaiable are");
+				         for(int i=0;i<=4;i++)
+				         {
+				        	 System.out.print(seats[i]+" ");
+				         }
+				         System.out.println("Please Enter The Seat Number");
+				         int s=obj.nextInt();
+				         if(seats[s-1]=='E')
+				         {
+				        	 seats[s-1]='B';
+				        	 System.out.println("Your Ticket is Booked");
+				         }
+				         else
+				         {
+				        	 System.out.print("The Seat Number is Already Booked");
+				         }
+				         break;
+				  case 2:System.out.println("Please Enter Your Seat Number To Cancel Your Ticket");
+				         int v=obj.nextInt();
+				         if(seats[v-1]=='B')
+				         {
+				        	 seats[v-1]='E';
+				        	 System.out.print("Your Ticket is Successfully Cancelled");
+				         }
+				         else
+				         {
+				        	 System.out.print("Please Check The Number You Entered");
+				         }
+				         break;
+				  case 3:for(int i=0;i<=4;i++)
+				         {
+					       System.out.println(seats[i]);
+				         }
+				         break;
+				  case 4:System.out.print("Thank you");
+				         break;
+				}
+				n=opt;
+				
+			}
+		
+		}
+	}
